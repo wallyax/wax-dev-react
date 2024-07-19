@@ -34,7 +34,7 @@ import the ReactDOM and runWax Module
 
 ```sh
 import ReactDOM from 'react-dom';
-import runWax from '@wally-ax/wax-dev-react'
+import runWax from '@wally-ax/wax-dev-react';
 
 const waxConfig = {
     rules: [],
@@ -50,7 +50,7 @@ App.js
 ```javascript
 import React from "react";
 import ReactDOM from 'react-dom';
-import runWax from '@wally-ax/wax-dev-react'
+import runWax from '@wally-ax/wax-dev-react';
 import './App.css';
 import Form from './Form';
 
