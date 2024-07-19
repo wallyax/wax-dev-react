@@ -58,7 +58,7 @@ const runner = (code, options) => {
           resolve(data);
         })
         .catch((error) => {
-          console.log('err', error,error?.response);
+          console.log('err', error);
         });
     } catch (error) {
       console.log('Unexpected error:', error);
