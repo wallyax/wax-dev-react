@@ -1,0 +1,29 @@
+{
+  "name": "@wally-ax/wax-dev-react",
+  "version": "0.1.1",
+  "description": "WallyAX's developer friendly accessibility test framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "accessibility",
+    "test"
+  ],
+  "author": "shritk",
+  "license": "MPL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wallyax/wax-dev-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wallyax/wax-dev-react/issues"
+  },
+  "homepage": "https://github.com/wallyax/wax-dev-react#readme",
+  "dependencies": {
+    "jsdom": "^24.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "@types/requestidlecallback": "^0.3.5"
+  }
+}
