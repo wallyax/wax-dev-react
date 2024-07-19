@@ -35,20 +35,47 @@ import the ReactDOM and runWax Module
 ```sh
 import ReactDOM from 'react-dom';
 import runWax from '@wally-ax/wax-dev-react'
-```
-Add the following at the top of your component in the same file:
-```
+
 const waxConfig = {
     rules: [],
     apiKey: "YOUR_WALLY_DEVELOPER_API_KEY",
   };
 runWax(React, ReactDOM, waxConfig);
 ```
+
+
+Here’s how the setup of your application should be structured, as shown below.
+
+App.js
+```javascript
+import React from "react";
+import ReactDOM from 'react-dom';
+import runWax from '@wally-ax/wax-dev-react'
+import './App.css';
+import Form from './Form';
+
+function App() {
+  const waxConfig = {
+    rules: [],
+    apiKey: "API KEY",
+  };
+  runWax(React, ReactDOM, waxConfig);
+  return (
+    <div className="App">
+      <p>
+        Wally Dev React
+      </p>
+      <Form />
+
+    </div>
+  );
+}
+export default App;
+
+````
 rules: An array of strings representing rule definitions. Available rules can be found [here]("https://kb.wallyax.com/docs/wax-dev/rules"). An empty array will include all rules.
 
-apiKey: A string required for the wax-dev to work. You can get the api key from [WallyAX Developer Portal](https://developer.wallyax.com)
-
-
+apiKey: A string required for the wax-dev-react to work. You can get the api key from [WallyAX Developer Portal](https://developer.wallyax.com)
 
 ### Results
 The results will be displayed in your browser's Developer console.
