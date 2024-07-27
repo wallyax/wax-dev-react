@@ -21,9 +21,10 @@
   },
   "homepage": "https://github.com/wallyax/wax-dev-react#readme",
   "dependencies": {
+    "@types/requestidlecallback": "^0.3.5",
     "jsdom": "^24.1.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "@types/requestidlecallback": "^0.3.5"
+    "requestidlecallback": "^0.3.0"
   }
 }
