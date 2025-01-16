@@ -20,10 +20,11 @@ const runner = (code, options) => {
     }
     
     try {
-      fetch(apiURL + '?apiKey=' + config.apiKey, {
+      fetch(apiURL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `${config.apiKey}`,
         },
         body: JSON.stringify({ element: code, rules: config.rules,isLinter:"false"}),
       })
