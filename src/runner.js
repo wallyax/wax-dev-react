@@ -45,10 +45,13 @@ const runner = (code, options) => {
             }, {});
             Object.keys(groupedResults).forEach((severity) => {
               console.groupCollapsed(`%c${severity}`, styles[severity] || styles.default);
-              groupedResults[severity].forEach((issue) => {
+              groupedResults[severity].forEach((issue, index) => {
                 console.groupCollapsed(`Element: %c${issue.element}`, styles.default);
-                console.log(`Message: ${issue.message}`);
-                console.log(`Description: ${issue.description}`);
+                Object.entries(issue).forEach(([key, value]) => {
+                  if (value !== null && value !== undefined) {
+                    console.log(`${key}:`, value);
+                  }
+                });
                 console.groupEnd();
               });
               console.groupEnd();
