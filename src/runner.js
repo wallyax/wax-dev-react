@@ -55,11 +55,9 @@ const runner = (code, options) => {
                   { key: 'element', label: 'Element' },
                   { key: 'message', label: 'Message' },
                   { key: 'severity', label: 'Severity' },
-                  { key: 'groupData.grouping', label: 'Grouping' },
-                  { key: 'groupData.subgroup', label: 'Subgroup' },
-                  { key: 'groupData.why_issue', label: 'Why issue' },
+                  { key: 'groupData.why_issue', label: 'Impact' },
                   { key: 'groupData.what_is_missing', label: 'What is missing' },
-                  { key: 'groupData.how_to_solve', label: 'How to solve' },
+                  { key: 'groupData.how_to_solve', label: 'How to fix' },
                   { key: 'groupData.example_before', label: 'Example before' },
                   { key: 'groupData.example_after', label: 'Example after' }
                 ];
@@ -69,8 +67,9 @@ const runner = (code, options) => {
                   let value = issue;
                   for (let k of keys) {
                     value = value?.[k];
+                    if (value === undefined || value === null) break;
                   }
-                  if (value !== null && value !== undefined) {
+                  if (value !== undefined && value !== null && value !== '') {
                     console.log(`${label}:`, value);
                   }
                 });
