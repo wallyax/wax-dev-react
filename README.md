@@ -75,7 +75,7 @@ export default App;
 ````
 rules: An array of strings representing rule definitions. Available rules can be found [here]("https://kb.wallyax.com/docs/wax-dev/rules"). An empty array will include all rules.
 
-apiKey: A string required for the wax-dev-react to work. You can get the api key from [WallyAX Developer Portal](https://developer.wallyax.com)
+apiKey: A string required for the wax-dev-react to work. You can get the api key from [WallyAX Account Portal](https://account.wallyax.com)
 
 ### Results
 The results will be displayed in your browser's Developer console.
