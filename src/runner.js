@@ -47,8 +47,32 @@ const runner = (code, options) => {
               console.groupCollapsed(`%c${severity}`, styles[severity] || styles.default);
               groupedResults[severity].forEach((issue) => {
                 console.groupCollapsed(`Element: %c${issue.element}`, styles.default);
-                console.log(`Message: ${issue.message}`);
-                console.log(`Description: ${issue.description}`);
+                const code = issue.code?.split('_')[0];
+                if (code) {
+                  console.log('Code:', code);
+                }
+                const logItems = [
+                  { key: 'element', label: 'Element' },
+                  { key: 'message', label: 'Message' },
+                  { key: 'severity', label: 'Severity' },
+                  { key: 'groupData.why_issue', label: 'Impact' },
+                  { key: 'groupData.what_is_missing', label: 'What is missing' },
+                  { key: 'groupData.how_to_solve', label: 'How to fix' },
+                  { key: 'groupData.example_before', label: 'Example before' },
+                  { key: 'groupData.example_after', label: 'Example after' }
+                ];
+            
+                logItems.forEach(({ key, label }) => {
+                  const keys = key.split('.');
+                  let value = issue;
+                  for (let k of keys) {
+                    value = value?.[k];
+                    if (value === undefined || value === null) break;
+                  }
+                  if (value !== undefined && value !== null && value !== '') {
+                    console.log(`${label}:`, value);
+                  }
+                });
                 console.groupEnd();
               });
               console.groupEnd();
