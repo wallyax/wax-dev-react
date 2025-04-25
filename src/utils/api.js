@@ -1,3 +1,3 @@
-const apiURL = "https://base.wallyax.com/audit-lint-html";
+const apiURL = "https://base.wallyax.com/audit-lint-npm";
 
 module.exports = apiURL;
